@@ -1,0 +1,5 @@
+# robots.txt for http://www.scalhive.com/
+## http://www.robotstxt.org/robotstxt.html
+
+User-agent: *
+# Disallow: /deprecated/ # This is an infinite virtual URL space

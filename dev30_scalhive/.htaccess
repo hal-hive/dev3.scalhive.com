@@ -1,0 +1,16 @@
+RewriteEngine On
+
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 1 Week for most static assets
+<filesMatch ".(css|jpg|jpeg|png|gif|js|ico|html)$">
+Header set Cache-Control "max-age=604800, public"
+</filesMatch>
+
+ErrorDocument 404 /404.html
+RewriteCond %{HTTP_HOST} ^scalhive\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.scalhive\.com$
+RewriteRule ^/?$ "https\:\/\/scalhive\.business\.site\/" [R=301,L]
+

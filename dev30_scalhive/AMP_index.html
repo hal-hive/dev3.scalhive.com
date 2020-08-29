@@ -1,0 +1,643 @@
+<!--<?php-->
+<!--header("Access-Control-Allow-Credentials: true");-->
+<!--header("Access-Control-Allow-Origin: *.ampproject.org");-->
+<!--header("AMP-Access-Control-Allow-Source-Origin: https://www.domain.com");-->
+<!--header("Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin");-->
+<!--?>-->
+<!doctype html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>SCALHIVE - official site</title>
+    <link rel="canonical" href="index.html">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Open-source framework for publishing content",
+        "datePublished": "2017-8-02T12:02:41Z",
+        "image": [
+          "https://scalhive.com/assets/img/logo/medium/logo_300x97.png"
+        ],
+        "author":{
+          "@type": "Organization",
+          "name": "Scalhive"
+            },
+        "publisher":{
+          "@type": "Organization",
+          "name": "Scalhive",
+       	  "logo": {
+            "@type": "ImageObject",
+    		"url":"https://scalhive.com/assets/img/logo/medium/logo_300x97.png",
+            "width": 186,
+            "height": 60
+          }
+        }
+      }
+    </script>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <style amp-custom>
+        html{
+            /*min-width: 315px;*/
+        }
+
+        body{
+            font-family: "Roboto", sans-serif;
+        }
+        ul{
+            padding-left: 0;
+        }
+        li {
+            list-style-type: none;
+        }
+        li:before {
+            content: "✔";
+            color: #f9bf3b;
+            font-size: 20px;
+        }
+        .slicknav_icon-bar {
+            background-color: #fff;
+            margin-top: 0.188em;
+            display: block;
+            width: 1.125em;
+            height: 0.125em;
+            -webkit-border-radius: 1px;
+            -moz-border-radius: 1px;
+            border-radius: 1px;
+            -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+            -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+        }
+        .slicknav_menutxt {
+            color: #fff;
+            font-weight: bold;
+            float: left;
+            margin: 8px 0px 0px 7px;
+        }
+        .slicknav_menu{
+            position: fixed;
+            right: 10px;
+            top: 33.5px;
+            width: 90px;
+            height: 33px;
+            background-color: #f9bf3b;
+            border-radius: 3px;
+            display: inline;
+        }
+        .slicknav_icon{
+            float: right;
+            margin: 7px 11px 0px 0px;
+        }
+        .logo{
+            float: left;
+            margin-top: 10px;
+        }
+        header{
+            display: block;
+            position: fixed;
+            z-index: 11;
+            width: 100%;
+            height: 80px;
+            padding: 10px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.8);
+        }
+        .dropDown{
+            position: fixed;
+            z-index: 1;
+            right: 10px;
+            top: 80px;
+            text-align: left;
+            font-size: 15px;
+            line-height: 30px;
+            width: 280px;
+            height: auto;
+            background-color: #f9bf3b;
+            visibility: hidden;
+            border-radius: 3px;
+        }
+        .dropDown a{
+            color: white;
+        }
+        .dropDown li{
+            list-style-type: none;
+        }
+        .dropDown li:before {
+            content: "";
+        }
+        .dropDown ul {
+            padding-left: 15px;
+        }
+        .hide {
+            visibility: hidden;
+        }
+        .hide + .slicknav_menu ~ .dropDown{
+            visibility: hidden;
+        }
+
+        .hide:checked + .slicknav_menu + .dropDown {
+            visibility: visible;
+        }
+        #hero-images .caption {
+            position: absolute;
+            overflow-x: hidden;
+            width: 100%;
+            color: #fff;
+            line-height: 36px;
+            padding: 10px 0 0 0;
+            text-align: center;
+            font-size: 16px;
+        }
+        #hero-images{
+            top: 100px;
+            text-align: center;
+        }
+        #hero-images h1{
+            font-size: 20px;
+            line-height: 20px;
+        }
+        .content{
+            position: relative;
+            top: 100px;
+        }
+        .containerYellow{
+            position: relative;
+            padding: 15px;
+            text-align: center;
+            background-color: #f9bf3b;
+        }
+        .containerGrey{
+            position: relative;
+            text-align: center;
+            top: 0;
+            background-color: #555;
+            padding: 65px 15px 65px 15px;
+        }
+        .containerYellow h2{
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 30px;
+            font-weight: 400;
+            font-family: inherit;
+            color: #fff;
+        }
+        .containerGrey h1{
+            margin: 0;
+            font-size: 38px;
+            text-align: center;
+            font-weight: 100;
+            line-height: 50px;
+            color: #fff;
+        }
+        strong{
+            font-size: 30px;
+            line-height: 1.1;
+            font-weight: 700;
+        }
+        p strong, a strong{
+            font-size: 16px;
+        }
+        .button, .yellowButton{
+            position: relative;
+            left: 50%;
+            margin-left: -110px;
+            width: 220px;
+            height: 55px;
+            background-color: #222;
+            box-shadow: 0 -3px 2px -1px rgba(0,0,0,.5) inset;
+            border-radius: 3px;
+            border: none;
+
+        }
+        .yellowButton{
+            background-color: #f9bf3b;
+        }
+        .button a, .yellowButton a{
+            font-family: Roboto,sans-serif;
+            color: #fff;
+            text-decoration: none;
+            outline: 0;
+            line-height: 55px;
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+        h3 {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            color: #222;
+            text-align: center;
+            line-height: 36px;
+            font-weight: 600;
+            margin: 0;
+            position: relative;
+            font-size: 24px;
+            display: block;
+        }
+        .block{
+            padding: 0 15px 0 15px;
+        }
+        .block_content{
+            display: block;
+            font-size: 14px;
+            line-height: 24px;
+            /*margin-right: -5px;*/
+        }
+        .block_content h4{
+            font-weight: 700;
+            font-size: 18px;
+            margin: 21px 0 11px;
+            display: block;
+            line-height: 1.1;
+        }
+        .block_content p{
+            display: block;
+            margin: 0 0 10px;
+        }
+        .marginTop{
+            margin-top: 20px;
+        }
+        .cPrimary{
+            color: #f9bf3b;
+        }
+        .form_text{
+            color: #fff;
+        }
+        .form_text h4{
+            font-weight: 600;
+            text-transform: uppercase;
+            line-height: 30px;
+        }
+        a{
+            text-decoration: none;
+            color: #222;
+        }
+        .specialCharacters{
+            font-size: 20px;
+        }
+        .footer{
+            text-align: left;
+            line-height: 30px;
+            color: #cacaca;
+            background-color: #222;
+            padding: 30px 15px 30px 15px;
+        }
+        .footer a{
+            color: #cacaca;
+        }
+        .footer p{
+            line-height: 30px;
+            font-size: 15px;
+        }
+        .footer .footer_logo{
+            font-size: 25px;
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: 900;
+            margin-bottom: 25px;
+        }
+        .footer_Copyrigh{
+            color: #cacaca;
+            background-color: #222;
+            text-align: center;
+            border-top: 1px solid white;
+            padding: 0 0 15px 0;
+        }
+        .footer h4{
+            color: #fff;
+        }
+        .footer_Copyrigh p{
+            margin: 0px 0px;
+            background-color: #222;
+            font-size: 16px;
+        }
+
+        #contact_form{
+            margin-top: 120px;
+            margin-bottom: -50px;
+            border: none;
+            border-style: none;
+            border-image: none;
+            background-color: white;
+            border: none;
+            border-top: 4px solid #f9bf3b;
+            padding: 30px 45px 30px 45px;
+            color: #666;
+            text-align: left;
+            font-size: 16px;
+            font-weight: 700;
+            font-family: Roboto,sans-serif;
+        }
+        #contact_form p{
+            margin-left: -15px;
+        }
+        #contact_form .form-group input,#contact_form textarea{
+            border: none;
+            border-style: none;
+            border-image: none;
+            border: 1px solid #e5e5e5;
+            height: 50px;
+            width: 100%;
+            padding: 0 15px 0 15px;
+            margin-left: -15px;
+            font-size: 15px;
+            font-weight: 500;
+            font-family: Roboto,sans-serif;
+        }
+        #contact_form textarea{
+            height: 120px;
+            padding: 10px 15px 10px 15px;
+        }
+        #yellowLine{
+            position: relative;
+            width: 50px;
+            left: 50%;
+            margin-left: -25px;
+            bottom: -40px;
+            border: 2px solid #f9bf3b;
+        }
+         form.amp-form-submit-success [submit-success],
+         form.amp-form-submit-error [submit-error]{
+             margin-top: 16px;
+         }
+        form.amp-form-submit-success [submit-success] {
+            color: green;
+        }
+        form.amp-form-submit-error [submit-error] {
+            color: red;
+        }
+        form.amp-form-submit-success.hide-inputs > input {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+            <a href="index.html" class="logo">
+                <amp-img src="https://scalhive.com/assets/img/logo/medium/logo_300x97.png" width="186px" height="60px" alt="ScalHive"></amp-img>
+            </a>
+            <input type="checkbox" id="hd-1" class="hide"/>
+            <label for="hd-1" class="slicknav_menu">
+                <div class="slicknav_menutxt">MENU</div>
+                <div class="slicknav_icon">
+                    <span class="slicknav_icon-bar"></span>
+                    <span class="slicknav_icon-bar"></span>
+                    <span class="slicknav_icon-bar"></span>
+                </div>
+            </label>
+            <div class="dropDown">
+                <ul>
+                    <li><a href="https://scalhive.com/service.html">Services</a></li>
+                    <li><a href="https://scalhive.com/team.html">Team</a></li>
+                    <li><a href="https://scalhive.com/jobs.html">Jobs</a></li>
+                    <li><a href="https://scalhive.com/about.html">About us</a></li>
+                    <li><a href="https://scalhive.com/contact.html">Contact</a></li>
+                </ul>
+            </div>
+    </header>
+<!--carousel-->
+    <amp-carousel id="hero-images"
+                  width="1024"
+                  height="480"
+                  layout="responsive"
+                  type="slides"
+                  autoplay>
+        <a href="#">
+            <amp-img class="carusel_img" src="https://scalhive.com/assets/img/index/large/main_8_1627x780.jpg"
+                     layout="fill"
+                     alt="product hero 1"
+                     attribution="visualhunt"></amp-img>
+            <div class="caption"><h1>We help you to grow your business.</h1>
+                <p>We find the best answer that suits your business</p></div>
+        </a>
+        <a href="#">
+            <amp-img class="carusel_img" src="https://scalhive.com/assets/img/index/large/main_6_1627x780.jpg"
+                     layout="fill"
+                     alt="product hero 2"
+                     attribution="visualhunt"></amp-img>
+            <div class="caption"><h1>Best solution.</h1>
+                <p>Our mission is to enable your business effectively use
+                    state-of-the-art technology for value-adding activities.</div>
+        </a>
+        <a href="#">
+            <amp-img class="carusel_img" src="https://scalhive.com/assets/img/index/large/main_8_1627x780.jpg"
+                     layout="fill"
+                     alt="product hero 3"
+                     attribution="visualhunt"></amp-img>
+            <div class="caption"><h1>We help you to grow your business.</h1>
+                <p>We find the best answer that suits your business</p></div>
+        </a>
+        <a href="#">
+            <amp-img class="carusel_img" src="https://scalhive.com/assets/img/index/large/main_6_1627x780.jpg"
+                     layout="fill"
+                     alt="product hero 4"
+                     attribution="visualhunt"></amp-img>
+            <div class="caption"><h1>Best solution.</h1>
+                <p>Our mission is to enable your business effectively use
+                    state-of-the-art technology for value-adding activities.</div>
+        </a>
+    </amp-carousel>
+<!--/carousel-->
+    <div class="content">
+    <!--yellow block-->
+        <div class="containerYellow">
+            <div>
+                <h2><strong>ScalHive</strong> is a software development company.<br>Our team provides the best service for your business</h2>
+            </div>
+            <div class="button">
+                <a href="https://scalhive.com/contact.html">Contact us today</a>
+            </div>
+        </div>
+    <!--/yellow block-->
+        <h3>We don’t compromise with quality. Creating value for you is our team priority. </h3>
+<!--/services-->
+        <div class="block">
+            <div>
+                <amp-img src="https://scalhive.com/assets/img/index/medium/features_3_380x162.jpg"
+                         layout="responsive"
+                         width="380"
+                         height="162" alt="Consulting block"></amp-img>
+                <div class="block_content">
+                    <h4>Consulting services</h4>
+                    <p>We can provide you with detailed consultation on Scala and the Lightbend Reactive Platform.
+                        Also we can help you with: Architecture/Design review,
+                        Code review, Mentoring and
+                        Training.
+                    </p>
+                </div>
+            </div>
+            <div>
+                <amp-img src="https://scalhive.com/assets/img/index/medium/features_4_380x162.jpg"
+                         layout="responsive"
+                         width="380"
+                         height="162" alt="Software developmen"></amp-img>
+                <div class="block_content">
+                    <h4>Software development</h4>
+                    <p>The company employs the best software engineers and developers.
+                        We can help you find the best solutions that fit your business.
+                    </p>
+                    <div class="block_content">
+                        <ul>
+                            <li> Develop software from scratch</li>
+                            <li> Integrate into a currently running project</li>
+                            <li> Move legacy system to a new platform</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <amp-img src="https://scalhive.com/assets/img/index/medium/features_1_380x162.jpg"
+                         layout="responsive"
+                         width="380"
+                         height="162" alt="Support and maintenance"></amp-img>
+                <div class="block_content">
+                    <h4>Support and maintenance</h4>
+                    <p>We provide support for our products and ensure high-quality maintenance.</p>
+                    <div class="block_content check-ul">
+                        <ul>
+                            <li> Run tests to assure the quality of a product</li>
+                            <li> Provide Cloud solutions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!--grey block-->
+        <div class="containerGrey">
+            <h1>Great things in business are never done by one person. They're done by a team of people.<br>
+                <i>Steve Jobs</i>
+            </h1>
+        </div>
+    <!--/grey block-->
+        <div class="block marginTop">
+            <amp-img src="https://scalhive.com/assets/img/index/medium/main_3_flip_821x395.jpg"
+                     layout="responsive"
+                     width="821"
+                     height="395" alt="ScalHive company"></amp-img>
+            <div class="block_content">
+                <p>We have a competent and experienced team to work with.
+                    <strong>ScalHive</strong> provides full software development
+                    lifecycle: analysis, design, development, QA, deployment,
+                    maintenance, and support. Our consistent approach to development and
+                    implementation lets us perform equally well for small businesses
+                    and for large corporations.
+                </p>
+            </div>
+        </div>
+<!--/services-->
+    <!--grey block-->
+        <div class="containerGrey">
+            <div class="form_text">
+                <h4 class="cPrimary">Get a free consultation</h4>
+                <h1>We design the best path to get a successful business which can make you profitable.</h1>
+            </div>
+            <!--<div id="yellowLine"></div>-->
+            <div class="yellowButton marginTop">
+                <a href="https://scalhive.com/contact.html">Send message</a>
+            </div>
+        </div>
+    <!--/grey block-->
+<!--About Us-->
+        <div class="block marginTop">
+            <div>
+                <amp-img class="carusel_img" src="https://scalhive.com/assets/img/index/medium/about_1_300x239.jpg"
+                         layout="responsive"
+                         width="300"
+                         height="239" alt="About our companyy"></amp-img>
+                <div class="block_content">
+                    <h4>About Us</h4>
+                    <p><strong>ScalHive</strong> is a software development company based in Ukraine.
+                        Our mission is to provide our customers with the top quality technological solutions for their businesses.
+                    </p>
+                </div>
+            </div>
+<!--/About Us-->
+<!--Our History-->
+            <div>
+                <amp-img class="carusel_img" src="https://scalhive.com/assets/img/index/medium/company_6_300x239.jpg"
+                         layout="responsive"
+                         width="300"
+                         height="239" alt="About our companyy"></amp-img>
+                <div class="block_content">
+                    <h4>Our History</h4>
+                    <p>We started our business in 2015.
+                        The company is open for motivated and highly skilled developers.
+                    </p>
+                    <div>
+                        <a href="about.html"><strong>Discover more <span class="specialCharacters">&#187;</span></strong></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!--yellow block-->
+        <div class="containerYellow marginTop">
+            <div>
+                <h2>Are you interested in our services?</h2>
+            </div>
+            <div class="button">
+                <a href="https://scalhive.com/contact.html">
+                    Contact us today</a>
+            </div>
+        </div>
+    <!--/yellow block-->
+<!--/Our History-->
+<!--footer-->
+        <div class="containerGrey footer">
+            <p class="footer_logo">SCALHIVE</p>
+            <p><strong>ScalHive</strong> is an active, vibrant place that rewards creativity and unconventional thinking.
+                Our vision is to enable your business to effectively use the state-of-the-art technology for value-adding activities.
+            </p>
+            <h4 class="widget-title">Support links</h4>
+            <a href="service.html">Services</a><br>
+            <a href="team.html">Team</a><br>
+            <a href="jobs.html">Jobs</a><br>
+            <a href="about.html">About us</a><br>
+            <a href="contact.html">Contact</a><br>
+            <h4>Contacts</h4>
+            <div class="footer_line">
+                <div>
+                    <span class="fa fa-phone"></span>
+                    <span> (+38) 068 670 28 08</span>
+                </div>
+                <div>
+                    <span class="fa fa-phone"></span>
+                    <span> (+38) 050 857 39 19</span>
+                </div>
+                <div class="single_contact">
+                    <span class="fa fa-envelope-o"></span>
+                    <span> t&#101;&#97;m&#64;&#115;c&#97;lhive&#46;com</span>
+                </div>
+                <div class="single_contact">
+                    <div class="footer_line">
+                        <span class="fa fa-home"></span>
+                        <span> 10 Berezhanska Str. </span>
+                    </div>
+                    <div>
+                        <span> Ternopil 46000, Ukraine</span>
+                    </div>
+                </div>
+            </div>
+            <h4>Socials</h4>
+            <div class="footer_line">
+                <span>
+                    <a href="https://www.linkedin.com/company-beta/17977372/"
+                       target="_blank">linkedIn<span class="specialCharacters">&#187;</span></a>
+                    </span><br>
+                    <span>
+                    <a href="https://github.com/awesome-it-ternopil"
+                       target="_blank">GitHub<span class="specialCharacters">&#187;</span></a>
+                </span>
+            </div>
+        </div>
+        <div class="footer_Copyrigh">
+            <p>© Copyright 2017 ScalHive</p>
+        </div>
+    </div>
+<!--/footer-->
+</body>
+</html>
